@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from "react";
+import ShowCase from "./ShowCase";
+import Header from "./parts/Header";
+import Navigation from "./parts/Navigation";
+import data from "./data/ListItmes";
 function App() {
+  const [catalog, setCataglog] = useState(data);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <main>
+        <ShowCase />
+        <Navigation catalog={data} />
+      </main>
+    </>
   );
 }
 
